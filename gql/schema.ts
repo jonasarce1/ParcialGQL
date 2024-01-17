@@ -14,12 +14,12 @@ export const typeDefs = `#graphql
     }
 
     type Query {
-        getContactos: [ContactoGQL!]!,
+        getContactos: [ContactoGQL!]!, 
         getContacto: ContactoGQL!
     },
 
     type Mutation {
-        hello: String!
+        addContacto(dni: String!, nombre: String!, apellido1: String!, apellido2: String!, email: String!, cp: String!, iso: String!):ContactoGQL!
     }
 
 `;

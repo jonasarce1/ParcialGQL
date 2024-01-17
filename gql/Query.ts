@@ -5,6 +5,9 @@ import { GraphQLError } from "graphql";
 export const Query = {
     getContactos: async(): Promise<Array<{nombre: string, apellido1: string, apellido2: string, dni: string}>> => {
         const contactos = await ContactoModel.find().exec();
+
+        //EN GRAPHQL ELIGE EL USUARIO YA LO QUE QUIERE VER
+
         const contactosCortos = contactos.map(function (contacto) {
             return {
                 nombre: contacto.nombre,
