@@ -3,20 +3,21 @@ import mongoose from "mongoose";
 import { GraphQLError } from "graphql";
 
 export const Query = {
-    getContactos: async(): Promise<Array<{nombre: string, apellido1: string, apellido2: string, dni: string}>> => {
+    getContactos: async(): Promise<Array<ContactoModelType>> => {
         const contactos = await ContactoModel.find().exec();
 
         //EN GRAPHQL ELIGE EL USUARIO YA LO QUE QUIERE VER
 
-        const contactosCortos = contactos.map(function (contacto) {
+        /*const contactosCortos = contactos.map(function (contacto) {
             return {
                 nombre: contacto.nombre,
                 apellido1: contacto.apellido1,
                 apellido2: contacto.apellido2,
                 dni: contacto.dni
             }
-        })
-        return contactosCortos;
+        })*/
+
+        return contactos;
     },
 
     getContacto: async(_:unknown, args:{dni:string}): Promise<ContactoModelType> => {
