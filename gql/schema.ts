@@ -15,7 +15,7 @@ export const typeDefs = `#graphql
 
     type Query {
         getContactos: [ContactoGQL!]!, 
-        getContacto: ContactoGQL!
+        getContacto(dni: String!): ContactoGQL!
     },
 
     type Mutation {
