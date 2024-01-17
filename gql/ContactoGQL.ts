@@ -15,7 +15,7 @@ export const ContactoGQL = {
 
             const json = await data.json();
 
-            return json.state;
+            return json.place_name;
         }catch(error){
             if(error instanceof mongoose.Error.ValidationError){
                 const validationErrors = Object.keys(error.errors).map(
@@ -104,7 +104,7 @@ export const ContactoGQL = {
 
             const json1 = await data1.json();
 
-            const ciudad = json1.state;
+            const ciudad = json1.place_name;
 
             const BASE_URL = "http://api.weatherapi.com/v1/current.json?key=";
             const WEATHER_API = Deno.env.get("WEATHER_API");

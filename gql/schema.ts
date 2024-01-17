@@ -20,7 +20,7 @@ export const typeDefs = `#graphql
 
     type Mutation {
         addContacto(dni: String!, nombre: String!, apellido1: String!, apellido2: String!, email: String!, cp: String!, iso: String!):ContactoGQL!,
-        putContacto(dni: String!, nombre: String!, apellido1: String!, apellido2: String!, email: String!, cp: String!, iso: String!): ContactoGQL!,
+        putContacto(dni: String!, nombre: String, apellido1: String, apellido2: String, email: String, cp: String, iso: String): ContactoGQL!,
         deleteContacto(dni: String!): String!
     }
 
